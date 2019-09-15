@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import random
 
 target = "methinks it is like a weasel"
+
    # generates a random string of characters that are the same length as target
 def generate_string(strLen):
     alphabet = list("abcdefghiljklmnopqrstuvwxyz ")
@@ -10,7 +11,7 @@ def generate_string(strLen):
         test_string = test_string + alphabet[random.randrange(27)]
     return test_string
 
-   # keep track to see which string is better than the other one use a scoring system
+   # keep tracks to see which string is better than the other one using a scoring system
    # iterate through all the characters in the generated string, if they match the target, give it a point
 def score_string(test_string, target_string):
     score = 0
@@ -19,9 +20,6 @@ def score_string(test_string, target_string):
             score += 1
     return score
 
-    # the best string is the string generated with the most matches
-    # for now I just put all the test strings but i have to find t
-    # need  to run this until the target is found
 def monkeyTypist():
     y = []
     x = []
@@ -43,7 +41,6 @@ def monkeyTypist():
                 newStr = newStr[:i] + c + newStr[i+1:]
                 counter += 1
                 bestScore = score_string("".join(newStr), "".join(target))
-
                 if counter % 100 == 0:
                     x = x + [counter]
                     y = y + [bestScore]
